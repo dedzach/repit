@@ -1,0 +1,1 @@
+UPDATE currentworkout SET reps = $1 WHERE currentworkout_id = $2

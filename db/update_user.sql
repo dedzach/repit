@@ -1,0 +1,1 @@
+UPDATE user SET ( username, email, password) = ($2, $3, $4) WHERE user_id = $1;
