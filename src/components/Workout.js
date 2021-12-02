@@ -41,7 +41,7 @@ export default function Workout() {
 
         return (
             <div>
-             <h1>Workout.js</h1>
+            
              <Container triggerText={triggerText} onSubmit={onSubmit}/>
              <div>
              {exerciseList.map(el => { return <div>

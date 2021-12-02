@@ -12,10 +12,18 @@ export default function CurrentPast() {
         return (
             <div>
 
-                <button size="lg" onClick={() => navigate('/Current')}>
+                <button 
+                type="button" 
+                className="btn btn-primary btn-lg" 
+                onClick={() => navigate('/Current')}
+                style={{ margin: "20px"}}>
                     Workout
                 </button>
-                <button size="lg" onClick={() => navigate('/Past')}>
+                <button 
+                type="button" 
+                className="btn btn-primary btn-lg" 
+                onClick={() => navigate('/Past')}
+                style={{ padding: "10px"}}>
                     Previous Workouts
                 </button>
             </div>

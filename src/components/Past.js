@@ -21,7 +21,7 @@ export default function Past({activeUser, setActiveUser}) {
 
         return (
             <div>
-                <h1>Select the workout you want to view.</h1>
+                <h1 style={{color: "#FFFFFF"}}>Select the workout you want to view.</h1>
                 {workoutList.map(el => { return <div> 
                     <button onClick={() => navigate(`/Workout/${el.workout_id}`)}>{el.workout_name}</button>                    
                 </div>})}

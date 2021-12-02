@@ -1,7 +1,7 @@
 import react from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
 
 
 export default function Current({activeUser, setActiveUser}) {
@@ -9,7 +9,7 @@ export default function Current({activeUser, setActiveUser}) {
     const [workoutName, setWorkoutName] = useState("");
     const [workoutList, setWorkoutList] = useState([]);
     const [rerender, setRerender] = useState(false);
-    const [increment, setIncrement] = useState()
+    
 
 
     const navigate = useNavigate();

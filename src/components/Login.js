@@ -70,10 +70,10 @@ export default function Login({activeUser, setActiveUser}) {
 
     return(
         <div className="Login">
-            <h1>Login</h1>
+            <h1 style={{color: "#FFFFFF"}}>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group size="lg" controlId="email">
-                    <Form.Label>Email:</Form.Label>
+                    <Form.Label style={{color: "#FFFFFF"}}>Email:</Form.Label>
                     <Form.Control 
                     autoFocus
                     type="email"
@@ -82,7 +82,8 @@ export default function Login({activeUser, setActiveUser}) {
                     />
                 </Form.Group>
                 <Form.Group size="lg" controlId="password">
-                    <Form.Label>Password:</Form.Label>
+                    {/* <label htmlFor="password">Password</label> */}
+                    <Form.Label style={{color: "#FFFFFF"}} id="password">Password:</Form.Label>
                     <Form.Control
                     type="password"
                     value={password}
