@@ -45,11 +45,11 @@ export default function Workout() {
              <Container triggerText={triggerText} onSubmit={onSubmit}/>
              <div>
              {exerciseList.map(el => { return <div>
-             <h1> Exercise:{el.exercise}</h1>     
-             <h4> Sets:{el.sets}</h4>
-             <h4> Reps:{el.reps}</h4>
-             <h4> Weight:{el.weight}</h4>
-             <h4> Time:{el.time}</h4>          
+             <h1 style={{color: "#FFFFFF"}}> Exercise:{el.exercise}</h1>     
+             <h4 style={{color: "#FFFFFF"}}> Sets:{el.sets}</h4>
+             <h4 style={{color: "#FFFFFF"}}> Reps:{el.reps}</h4>
+             <h4 style={{color: "#FFFFFF"}}> Weight:{el.weight}</h4>
+             <h4 style={{color: "#FFFFFF"}}> Time:{el.time}</h4>          
                  <button onClick={() => incrementWorkout(el.currentworkout_id)}>Increment</button>
                 </div>})}
              </div>

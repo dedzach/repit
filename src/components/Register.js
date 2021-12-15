@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 // import './Login.css';
 import { useState } from 'react'; 
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 
 
@@ -13,13 +14,17 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState('');
-    const register = () => {
+
+    const navigate = useNavigate();
+    const register = (e) => {
         console.log( username, email, password )
         axios.post('http://localhost:3333/api/user', {
             username: username,
             email: email,
             password: password
-        })
+        });
+        alert(`Your account has been created!`);
+    //  res.redirect("/CurrentPast");
     }
 
     function validateForm() {
