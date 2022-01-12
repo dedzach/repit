@@ -1,1 +1,1 @@
-DELETE FROM workout WHERE workout_id = ${workout_id};
+DELETE FROM workout WHERE workout_id = ${workout_id}

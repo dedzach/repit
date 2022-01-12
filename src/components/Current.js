@@ -38,9 +38,14 @@ export default function Current({activeUser, setActiveUser}) {
             user_id: activeUser
         })
         .then( (res) => { 
-            console.log(res.data)
-            setWorkoutList(res.data) })
-    }
+            if(res.data) {
+                axios.get(`http://localhost:3333/api/workout/${activeUser}`)
+            .then( (workouts) => { 
+                console.log(workouts) 
+                setWorkoutList(workouts.data) })
+        }
+    })
+}
 // User 19 is hardcoded, pull user ID off local storage. 
 // Local storage autimatically stringifies stuff.
 

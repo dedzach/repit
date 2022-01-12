@@ -4,14 +4,17 @@ module.exports = {
         const dbInstance = req.app.get('db');
     
         const createWorkout = await dbInstance.create_workout([ workout_name, user_id ])
+        try{
         if ( createWorkout ){ 
            const workouts = await dbInstance.readAll_workout()
            console.log(workouts)
           //   .then( workout => console.log(users))
             res.status(200).send( workouts ) 
-        }
+        }}
+        catch(err){
         res.status(500).send({errorMessage: " READ Oops! Something went wrong. Our engineers have been informed!"});
             console.log(err)
+        }
       },
       
       getOne: ( req, res, next ) => {

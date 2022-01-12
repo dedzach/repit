@@ -18,14 +18,15 @@ module.exports = {
           console.log( email, password )
           // Getting access to database so I can query. 
           const dbInstance = req.app.get('db');
-      
-          let foundUser = await dbInstance.login_user({ email, password })
-          console.log(foundUser, 'Login foundUser')
-            if (!foundUser ) {
+          try{
+            let foundUser = await dbInstance.login_user({ email, password })
+            console.log(foundUser, 'Login foundUser')
+            if(foundUser) res.status(200).send(foundUser[0]) 
+          }
+          catch(e){
               res.status(500).send({errorMessage: " Wrong username and password combination. Please try again noob!"});
-              console.log(err);
-            }
-          res.status(200).send(foundUser[0]) 
+              console.log(e);
+          }
         },
       
       getOne: ( req, res, next ) => {

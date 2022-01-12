@@ -5,14 +5,17 @@ module.exports = {
           const dbInstance = req.app.get('db');
       
           const createExercise = await dbInstance.create_exercise([ reps, weight, exercise, time, sets, workout_id])
+          try{
           if ( createExercise ){
             const exercises = await dbInstance.readAll_exercises()
             console.log(exercises)
             res.status(200).send( exercises )
+          }}
+          catch(err){
+            res.status(500).send({errorMessage: " CREATE Oops! Something went wrong. Zach has been informed!"});
+            console.log(err);
           }
             // .then( x => console.log(x))     
-              res.status(500).send({errorMessage: " CREATE Oops! Something went wrong. Zach has been informed!"});
-              console.log(err);
         },
   
         getAll: async ( req, res, next ) => {
