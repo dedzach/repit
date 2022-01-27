@@ -1,6 +1,7 @@
 import { react, useEffect, useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
+import Button  from '@material-ui/core/Button'
 
 export default function Past({activeUser, setActiveUser}) {
 
@@ -23,7 +24,7 @@ export default function Past({activeUser, setActiveUser}) {
             <div>
                 <h1 style={{color: "#FFFFFF"}}>Select the workout you want to view.</h1>
                 {workoutList.map(el => { return <div> 
-                    <button onClick={() => navigate(`/Workout/${el.workout_id}`)}>{el.workout_name}</button>                    
+                    <Button variant="contained" onClick={() => navigate(`/Workout/${el.workout_id}`)}>{el.workout_name}</Button>                    
                 </div>})}
             </div>
         );

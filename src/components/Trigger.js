@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+import { Button } from "@material-ui/core";
 
 const Trigger = ({ triggerText, buttonRef, showModal }) => {
-    return (
-        <button
-        ref={buttonRef}
-        onClick={showModal}>
-        Add Exercise</button>
-    );
+  return (
+    <Button variant="contained" ref={buttonRef} onClick={showModal}>
+      Add Exercise
+    </Button>
+  );
 };
 
 export default Trigger;

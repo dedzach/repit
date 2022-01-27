@@ -1,45 +1,42 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import Form from "react-bootstrap/Form";
+// import Button from 'react-bootstrap/Button';
 // import './Login.css';
-import { useState } from 'react'; 
-import axios from 'axios';
-import { useNavigate } from 'react-router';
-
-
-
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router";
+import { Button, TextField } from "@material-ui/core";
 
 export default function Register() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [username, setUsername] = useState('');
-
-    const navigate = useNavigate();
-    const register = (e) => {
-        console.log( username, email, password )
-        axios.post('http://localhost:3333/api/user', {
-            username: username,
-            email: email,
-            password: password
-        });
-        alert(`Your account has been created!`);
+  const navigate = useNavigate();
+  const register = (e) => {
+    console.log(username, email, password);
+    axios.post("http://localhost:3333/api/user", {
+      username: username,
+      email: email,
+      password: password,
+    });
+    alert(`Your account has been created!`);
     //  res.redirect("/CurrentPast");
-    }
+  };
 
-    function validateForm() {
-        return email.length > 0 && password.length > 0;
-    }
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+  }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
 
-    return(
-        <div className="Login">
-            <h1>Register</h1>
-            <Form onSubmit={handleSubmit}>
-            <Form.Group size="lg" controlId="password">
+  return (
+    <div className="Login">
+      <h1>Register</h1>
+      <Form onSubmit={handleSubmit}>
+        {/* <Form.Group size="lg" controlId="password">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
                     type="Username"
@@ -63,16 +60,40 @@ export default function Register() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     />
-                </Form.Group>
-                <Button 
+                </Form.Group> */}
+        {/* <Button 
                 block size="lg" 
                 type="submit" 
                 disabled={!validateForm()}
                 onClick={register}
                 >
                     Register
-                </Button>
-            </Form>  
-        </div>
-    )
+                </Button> */}
+        <TextField
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          id="email"
+          label="Email"
+          variant="filled"
+        />
+        <TextField
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          id="email"
+          label="email"
+          variant="filled"
+        />
+        <TextField
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          id="password"
+          label="Password"
+          variant="filled"
+        />
+        <Button variant="contained" onClick={Register}>
+          Register
+        </Button>
+      </Form>
+    </div>
+  );
 }
