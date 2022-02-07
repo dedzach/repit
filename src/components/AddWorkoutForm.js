@@ -10,6 +10,7 @@ export default function AddWorkoutForm({ onSubmit }) {
   const [time, setTime] = useState("");
   const [sets, setSets] = useState("");
   const { id } = useParams();
+
   // What made you think of this as a potential solution?
   console.log(id);
 
